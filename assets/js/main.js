@@ -23,11 +23,19 @@ console.log(ticketPrice+"€");
 
 /* va applicato uno sconto del 20% per i minorenni */
 if (userAge < 18) {
-    const ticketPriceUnder = ticketPrice *0.6;
+    const ticketPriceUnder = ticketPrice *0.8;
     console.log(ticketPriceUnder + "€");
     
 } else {
     ticketPriceUnder = ticketPrice
 }
 
-va applicato uno sconto del 40% per gli over 65.
+/* va applicato uno sconto del 40% per gli over 65. */
+
+if (userAge > 65 ) {
+    const ticketPriceUnder = ticketPrice *0.6;
+    console.log(ticketPriceUnder + "€");
+    
+} else {
+    ticketPriceUnder = ticketPrice
+}
