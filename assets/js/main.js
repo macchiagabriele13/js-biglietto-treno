@@ -18,24 +18,27 @@ const userAge = prompt("Quanti anni hai?");
 console.log(userAge); 
 
 /* prezzo del biglietto è definito in base ai km (0.21 € al km) */
-const ticketPrice = 0.21 * userKm;
-console.log(ticketPrice+"€");
+const ticketPrice = (0.21 * userKm).toFixed(2);
+console.log("controllo ticketPrice", ticketPrice+"€");
 
+
+let finalPrice
 /* va applicato uno sconto del 20% per i minorenni */
 if (userAge < 18) {
-    const ticketPriceUnder = ticketPrice *0.8;
-    console.log(ticketPriceUnder + "€");
+    finalPrice = (ticketPrice *0.8).toFixed(2);
+    //console.log(ticketPriceUnder + "€");
     
-} else {
-    ticketPriceUnder = ticketPrice
-}
+} else if (userAge > 65 ) {
+    finalPrice = (ticketPrice *0.6).toFixed(2);
+    //console.log(ticketPriceUnder + "€");
 
-/* va applicato uno sconto del 40% per gli over 65. */
-
-if (userAge > 65 ) {
-    const ticketPriceUnder = ticketPrice *0.6;
-    console.log(ticketPriceUnder + "€");
-    
 } else {
-    ticketPriceUnder = ticketPrice
+    finalPrice = ticketPrice;
+    //console.log(ticketPriceUnder + "€");
 }
+console.log("controllo finalPrice", finalPrice + "€");
+
+const finalTicket = ("Ciao il prezzo del tuo biglietto è " + finalPrice)
+console.log(finalTicket);
+
+document.getElementById('biglietto').innerHTML = finalTicket
