@@ -10,9 +10,24 @@
 
 
 /* il numero di chilometri che vuole percorrere */
-const userKm = prompt("Quanti chilometri vuoi percorrere?")
+const userKm = prompt("Quanti chilometri vuoi percorrere?");
 console.log(userKm); 
 
 /* l'età del passeggero. */
-const userAge = prompt("Quanti anni hai?")
+const userAge = prompt("Quanti anni hai?");
 console.log(userAge); 
+
+/* prezzo del biglietto è definito in base ai km (0.21 € al km) */
+const ticketPrice = 0.21 * userKm;
+console.log(ticketPrice+"€");
+
+/* va applicato uno sconto del 20% per i minorenni */
+if (userAge < 18) {
+    const ticketPriceUnder = ticketPrice *0.6;
+    console.log(ticketPriceUnder + "€");
+    
+} else {
+    ticketPriceUnder = ticketPrice
+}
+
+va applicato uno sconto del 40% per gli over 65.
